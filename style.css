@@ -1,0 +1,64 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-text {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hidden for animation */
+}
+
+/* Image Container */
+.image-container {
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+.hero-image {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+/* Hover Effect */
+.hero-image:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+
+.image-container:hover .hero-image:not(:hover) {
+    filter: grayscale(1) blur(3px);
+    opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 2rem;
+    }
+
+    .hero-image {
+        width: 150px;
+    }
+}
